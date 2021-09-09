@@ -8,20 +8,10 @@ jobs:
         type: volume
     resources:
       instance-type: C5
+
   workflow-test:
-    uses: script@v1
-    with:
-      image: tensorflow/tensorflow:1.14.0-gpu-py3
-      script: |-
-        pip3 install -U scikit-learn
-        pip3 install pandas
-        cd /inputs/repo
-        python3 model_iris.py make_prediction \
-          --network=https://n5j9gfsrtx.clg07azjl.paperspacegradient.com/lab/tree/finalized_model.pkl \
-          --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
-          --result-dir=/outputs/iris
-        mv iris.csv /outputs/iris
-        Ls "-aFlR" /outputs/iris
+    resources:
+      instance-type: C5
     needs:
       - CloneRepo
     inputs:
@@ -31,5 +21,18 @@ jobs:
         type: dataset
         with:
           ref: dst5ycz7ehnkv5u
-    resources:
-      instance-type: C5
+    uses: script@v1
+    with:
+      script: |-
+        pip3 install -U scikit-learn
+        pip3 install pandas
+        cd /inputs/repo
+        python3 model_iris.py make_prediction \
+          --network=https://n5j9gfsrtx.clg07azjl.paperspacegradient.com/lab/tree/finalized_model.pkl \
+          --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
+          --result-dir=/outputs/iris
+        mv predSpecies.csv /outputs/iris
+        ls "-aFlR" /outputs/iris
+    image: tensorflow/tensorflow:1.14.0-gpu-py3
+    
+    
