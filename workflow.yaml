@@ -20,6 +20,8 @@ jobs:
           --network=https://n5j9gfsrtx.clg07azjl.paperspacegradient.com/lab/tree/finalized_model.pkl \
           --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
           --result-dir=/outputs/iris
+        mv iris.csv /outputs/iris
+        Ls "-aFlR" /outputs/iris
     needs:
       - CloneRepo
     inputs:
