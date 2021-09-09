@@ -8,7 +8,7 @@ import pandas as pd
 iris = load_iris()
 df = pd.read_csv('https://raw.githubusercontent.com/Jameshskelton/workflow-test/main/iris.csv')
 
-network = pickle.load(open('https://nevwm91tgc.clg07azjl.paperspacegradient.com/lab/tree/finalized_model.pkl', 'rb'))
+network = pickle.load(open('finalized_model.pkl', 'rb'))
 
 def make_prediction(network, df):
     x = network.predict(df)
