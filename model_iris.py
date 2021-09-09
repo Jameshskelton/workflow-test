@@ -7,7 +7,7 @@ import pandas as pd
 
 def make_prediction(network, data):
     x = network.predict(data.drop('species', axis = 0)
-    df = pd.DataFrame(iris.data)
+    df = pd.DataFrame(data)
     df['actual'] = iris.target
     df['pred'] = x
     return df
