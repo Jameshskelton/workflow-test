@@ -5,12 +5,14 @@ import pickle
 import pandas as pd
 
 
-def make_prediction(network, data):
-    x = network.predict(data.drop('species', axis = 0)
-    df = pd.DataFrame(data)
-    df['actual'] = iris.target
-    df['pred'] = x
-    return df
+iris = load_iris()
+df = pd.read_csv('https://raw.githubusercontent.com/Jameshskelton/workflow-test/main/iris.csv')
+
+def make_prediction(network, df):
+    x = network.predict(df)
+    out = pd.DataFrame(x, columns = ['pred'])
+    out['actual'] = iris.target
+    return out
 
 Test = make_prediction(network, data)
 

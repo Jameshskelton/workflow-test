@@ -23,6 +23,7 @@ jobs:
           ref: dst5ycz7ehnkv5u
     uses: script@v1
     with:
+      image: tensorflow/tensorflow:1.14.0-gpu-py3
       script: |-
         pip3 install -U scikit-learn
         pip3 install pandas
@@ -33,6 +34,6 @@ jobs:
           --result-dir=/outputs/iris
         mv predSpecies.csv /outputs/iris
         ls "-aFlR" /outputs/iris
-    image: tensorflow/tensorflow:1.14.0-gpu-py3
+    
     
     
