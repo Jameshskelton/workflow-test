@@ -32,7 +32,7 @@ jobs:
           --network=mosygl1eabx1z7o \
           --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
           --result-dir=/outputs/iris
-        mv predSpecies.csv /outputs/iris
+        mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
     
     
