@@ -18,7 +18,7 @@ def make_prediction(network, df):
 
 Test = make_prediction(network, df)
 
-Test.to_csv('predSpecies.csv')
+Test.to_csv('predSpecies1.csv')
 print('Done')
 
 
