@@ -29,7 +29,7 @@ jobs:
         pip3 install pandas
         cd /inputs/repo
         python3 model_iris.py make_prediction \
-          --network=https://n5j9gfsrtx.clg07azjl.paperspacegradient.com/lab/tree/finalized_model.pkl \
+          --network=mosygl1eabx1z7o \
           --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
           --result-dir=/outputs/iris
         mv predSpecies.csv /outputs/iris
