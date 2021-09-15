@@ -16,9 +16,9 @@ def make_prediction(network, df):
     out['actual'] = iris.target
     return out
 
-results = make_prediction(network, df)
+result = make_prediction(network, df)
 
-results.to_csv('predSpecies1.csv')
+result.to_csv('predSpecies1.csv')
 print('Done')
 
 
