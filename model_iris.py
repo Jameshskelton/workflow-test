@@ -7,7 +7,7 @@ import pandas as pd
 iris = load_iris()
 df = iris.data
 
-network = pickle.load(open('save/save.p', 'rb'))
+network = pickle.load(open('save.p', 'rb'))
 
 def make_prediction(network, data):
     x = network.predict(df)
