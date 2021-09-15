@@ -19,7 +19,7 @@ jobs:
         python3 trainModel.py 
         mv save.p /outputs/repo
     outputs:
-      save.p:
+      save:
         type: model
     resources:
       instance-type: C5
