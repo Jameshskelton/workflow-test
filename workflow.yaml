@@ -20,6 +20,8 @@ jobs:
         mv save.p /outputs/save
     needs:
       - CloneRepo
+    inputs:
+      repo: CloneRepo.outputs.repo
     outputs:
       save:
         type: volume
