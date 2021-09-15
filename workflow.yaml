@@ -8,6 +8,16 @@ jobs:
         type: volume
     resources:
       instance-type: C5
+  TrainModel:
+    uses: script@v1
+    with:
+      image: tensorflow/tensorflow:1.14.0-gpu-py3
+      script: |-
+        pip3 install -U scikit-learn
+        pip3 install pandas
+        cd /inputs/repo
+        python3 trainModel.py 
+        mv save.p /outputs/repo
   workflow-test:
     uses: script@v1
     with:
