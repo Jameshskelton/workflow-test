@@ -34,7 +34,7 @@ jobs:
       script: |-
         pip3 install -U scikit-learn
         pip3 install pandas
-        cp -R /inputs/save /workflow-test
+        cp /inputs/save /workflow-test
         cd /repo/workflow-test
         python3 model_iris.py 
         mv predSpecies1.csv /outputs/iris
