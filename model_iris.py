@@ -3,11 +3,12 @@ from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 import pandas as pd
+from gradient import sdk_client
 
 iris = load_iris()
 df = iris.data
 
-network = pickle.load(open('te72i7f1w/models/mosygl1eabx1z7o/finalized_model.pkl', 'rb'))
+network = pickle.load(open('save/save.p', 'rb'))
 
 def make_prediction(network, data):
     x = network.predict(df)
