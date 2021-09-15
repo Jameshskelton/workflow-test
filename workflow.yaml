@@ -8,19 +8,7 @@ jobs:
         type: volume
     resources:
       instance-type: C5
-
   workflow-test:
-    resources:
-      instance-type: C5
-    needs:
-      - CloneRepo
-    inputs:
-      repo: CloneRepo.outputs.repo
-    outputs:
-      iris:
-        type: dataset
-        with:
-          ref: dst5ycz7ehnkv5u
     uses: script@v1
     with:
       image: tensorflow/tensorflow:1.14.0-gpu-py3
@@ -30,10 +18,18 @@ jobs:
         cd /inputs/repo
         python3 model_iris.py make_prediction \
           --network=mosygl1eabx1z7o \
-          --data=https://github.com/Jameshskelton/workflow-test/blob/main/iris.csv \
+          --data=dst5ycz7ehnkv5u \
           --result-dir=/outputs/iris
         mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
-    
-    
-    
+    needs:
+      - CloneRepo
+    inputs:
+      repo: CloneRepo.outputs.repo
+    outputs:
+      iris:
+        type: dataset
+        with:
+          ref: dst5ycz7ehnkv5u
+    resources:
+      instance-type: C5
