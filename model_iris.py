@@ -4,8 +4,8 @@ from sklearn.tree import DecisionTreeClassifier
 import pickle
 import pandas as pd
 
-# iris = load_iris()
-# df = iris.data
+iris = load_iris()
+df = iris.data
 
 # network = pickle.load(open('finalized_model.pkl', 'rb'))
 
@@ -15,9 +15,9 @@ def make_prediction(network, data):
     out['actual'] = iris.target
     return out
 
-# Test = make_prediction(network, df)
+Test = make_prediction(network, df)
 
-# Test.to_csv('predSpecies1.csv')
+Test.to_csv('predSpecies1.csv')
 print('Done')
 
 
