@@ -18,6 +18,8 @@ jobs:
         cd /inputs/repo
         python3 trainModel.py 
         mv save.p /outputs/repo
+    needs:
+      - CloneRepo
     resources:
       instance-type: C5
   workflow-test:
@@ -32,7 +34,7 @@ jobs:
         mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
     needs:
-      - CloneRepo
+      - TrainModel
     inputs:
       repo: CloneRepo.outputs.repo
     outputs:
