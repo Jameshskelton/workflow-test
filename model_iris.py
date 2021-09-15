@@ -3,7 +3,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 import pandas as pd
-
+import network,data 
 
 # iris = load_iris()
 # df = pd.read_csv('https://raw.githubusercontent.com/Jameshskelton/workflow-test/main/iris.csv')
@@ -16,9 +16,9 @@ def make_prediction(network, df):
     out['actual'] = iris.target
     return out
 
-Test = make_prediction(network, df)
+results = make_prediction(network, df)
 
-Test.to_csv('predSpecies1.csv')
+results.to_csv('predSpecies1.csv')
 print('Done')
 
 
