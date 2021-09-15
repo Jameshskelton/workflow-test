@@ -21,8 +21,8 @@ jobs:
     outputs:
       save.p:
         type: model
-      resources:
-        instance-type: C5
+    resources:
+      instance-type: C5
   workflow-test:
     uses: script@v1
     with:
