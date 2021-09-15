@@ -16,10 +16,7 @@ jobs:
         pip3 install -U scikit-learn
         pip3 install pandas
         cd /inputs/repo
-        python3 model_iris.py make_prediction \
-          --network=mosygl1eabx1z7o \
-          --data=dst5ycz7ehnkv5u \
-          --result-dir=/outputs/iris
+        python3 model_iris.py 
         mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
     needs:
