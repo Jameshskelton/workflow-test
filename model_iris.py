@@ -3,7 +3,6 @@ from sklearn.model_selection import cross_val_score
 from sklearn.tree import DecisionTreeClassifier
 import pickle
 import pandas as pd
-from gradient import sdk_client
 
 iris = load_iris()
 df = iris.data
