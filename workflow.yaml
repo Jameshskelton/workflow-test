@@ -45,6 +45,7 @@ jobs:
       - CloneRepo
     inputs:
       repo: CloneRepo.outputs.repo
+      save: TrainModel.outputs.save
     outputs:
       iris:
         type: dataset
