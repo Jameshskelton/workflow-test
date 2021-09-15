@@ -41,8 +41,8 @@ jobs:
         mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
     needs:
-      - TrainModel
       - CloneRepo
+      - TrainModel
     inputs:
       repo: CloneRepo.outputs.repo
       save: TrainModel.outputs.save
