@@ -18,6 +18,15 @@ jobs:
         cd /inputs/repo
         python3 trainModel.py 
         mv save.p /outputs/repo
+    needs:
+      CloneRepo
+    inputs:
+      repo: CloneRepo.ouputs.repo
+    outputs:
+      save.p:
+        type: model
+      resources:
+        instance-type: C5
   workflow-test:
     uses: script@v1
     with:
