@@ -5,7 +5,7 @@ import pickle
 import pandas as pd
 import network,data 
 
-# iris = load_iris()
+iris = load_iris()
 df = pd.read_csv('https://raw.githubusercontent.com/Jameshskelton/workflow-test/main/iris.csv')
 
 network = pickle.load(open('finalized_model.pkl', 'rb'))
@@ -16,9 +16,9 @@ def make_prediction(network, df):
     out['actual'] = iris.target
     return out
 
-result = make_prediction(network, df)
+Test = make_prediction(network, df)
 
-result.to_csv('predSpecies1.csv')
+Test.to_csv('predSpecies1.csv')
 print('Done')
 
 
