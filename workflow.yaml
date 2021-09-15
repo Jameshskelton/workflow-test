@@ -34,8 +34,8 @@ jobs:
       script: |-
         pip3 install -U scikit-learn
         pip3 install pandas
-        cp -R /inputs/save /workflow-test
-        cd /repo/workflow-test
+        cp -R /inputs/save /inputs/repo
+        cd /inputs/repo
         python3 model_iris.py 
         mv predSpecies1.csv /outputs/iris
         ls "-aFlR" /outputs/iris
