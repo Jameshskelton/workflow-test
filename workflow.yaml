@@ -34,7 +34,7 @@ jobs:
       script: |-
         pip3 install -U scikit-learn
         pip3 install pandas
-        cd/inputs/save
+        cd /inputs/save
         mv save.p /inputs/repo
         cd ../repo
         python3 model_iris.py 
